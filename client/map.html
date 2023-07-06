@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/ico/openstreetmapFavicon.png" type="image/x-icon">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <link rel="stylesheet" href="./assets/styles/main.css">
+</head>
+<body>
+    <header class="header--map">
+    </header>
+    <div class="content--map" id="map">
+        <div class="content__map__nav">
+            <div class="content__map__nav__hover"></div>
+            <button class="sateliteToggle"></button>
+            <button class="darkmodToggle">
+                <img src="./assets/ico/light_mode.svg" alt="">
+                <img src="./assets/ico/dark_mode.svg" alt="">
+            </button>
+            <div class="content__map__nav__catList"></div>
+            <a target="_blank" href="./admin.html" class="content__map__nav__admin">administration</a>
+        </div>
+    </div>
+    <footer></footer>
+    <script type="module" src="./assets/scripts/main.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    <script type="module" src="./assets/scripts/map.js"></script>
+    <script type="module" src="./assets/scripts/map_nav.js"></script>
+</body>
+</html>
