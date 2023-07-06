@@ -1,0 +1,119 @@
+{
+  "map_category": [
+    {
+      "name": "example1",
+      "description": "",
+      "id": 1
+    },
+    {
+      "name": "example2",
+      "description": "demo cat et obj sur dijon",
+      "id": 2
+    }
+  ],
+  "map_object": [
+    {
+      "type": "marker",
+      "title": "example de point",
+      "geoData": [
+        47.316779,
+        5.079817
+      ],
+      "popupContent": "<p>😜</p>",
+      "args": {
+        "ico": "",
+        "color": "",
+        "radius": null
+      },
+      "map_categoryId": 1,
+      "id": 1
+    },
+    {
+      "type": "marker",
+      "title": "place wilson",
+      "geoData": [
+        47.316157,
+        5.04332
+      ],
+      "popupContent": "<p><img src=\"https://static.canalblog.com/storagev1/annedauphin.canalblog.com/albums/dijon/wilson2.jpg\" alt=\"\" width=\"200\" height=\"133\" /></p>",
+      "args": {
+        "ico": "image.svg",
+        "color": "",
+        "radius": null
+      },
+      "map_categoryId": 1,
+      "id": 2
+    },
+    {
+        "type": "marker",
+        "geoData": [
+          47.326752,
+          5.044827
+        ],
+        "title": "testtitle !!",
+        "popupContent": "<p>this is content 222</p>\r\n<p><img src=\"http://www.thewowstyle.com/wp-content/uploads/2015/02/now-i-am-free.jpg\" alt=\"\" width=\"200\" height=\"134\" /></p>",
+        "args": {
+          "ico": "visibility.svg",
+          "color": "",
+          "radius": null
+        },
+        "map_categoryId": 2,
+        "id": 3
+      },
+      {
+        "type": "marker",
+        "geoData": [
+          47.323498,
+          5.027157
+        ],
+        "popupContent": "<p>hey! this is a popup!</p>\r\n<p><img src=\"https://www.terrasse-resine.fr/wp-content/uploads/2021/10/flamand-rose_280.png\" alt=\"\" width=\"150\" height=\"150\" /></p>\r\n<p>lorem ipsum sdfshd khds sdlhgf lfoe qdqsd ezrezr ccxc.</p>\r\n<p>&nbsp;</p>",
+        "args": {
+          "ico": "",
+          "color": "",
+          "radius": null
+        },
+        "map_categoryId": 2,
+        "id": 4
+      },
+      {
+        "type": "polygon",
+        "geoData": [
+          [
+            47.36685,
+            4.858704
+          ],
+          [
+            47.375918,
+            4.896984
+          ],
+          [
+            47.351327,
+            4.905653
+          ]
+        ],
+        "popupContent": "<p>first polygon</p>",
+        "args": {
+          "ico": "",
+          "color": "green",
+          "radius": null
+        },
+        "map_categoryId": 2,
+        "id": 5
+      },
+      {
+        "type": "circle",
+        "geoData": [
+          47.314999,
+          4.984167
+        ],
+        "popupContent": "<p>content</p>",
+        "args": {
+          "ico": "",
+          "color": "purple",
+          "radius": 1500
+        },
+        "map_categoryId": 2,
+        "id": 6
+      }
+  ]
+}

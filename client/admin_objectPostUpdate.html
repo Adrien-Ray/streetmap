@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/ico/openstreetmapFavicon.png" type="image/x-icon">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/styles/main.css">
+    <script src="https://cdn.tiny.cloud/1/pgilkwgkinuhec5h74taki2h30q1n6ksr5macmzkg7nv9ro2/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script type="module" src="./assets/scripts/admin_object.js"></script>
+</head>
+<body>
+    <header>
+    </header>
+    <div class="content">
+        <form action="./admin_objectPostUpdate__handler.html" method="get" class="content__objectAdd">
+            <h3>ajouter un objet</h3>
+            <fieldset>
+                <legend>type</legend>
+                <label><input type="radio" name="type" id="marker" value="marker">marker</label>
+                <label><input type="radio" name="type" id="polygon" value="polygon">polygon</label>
+                <label><input type="radio" name="type" id="circle" value="circle">circle</label>
+                <label><input type="radio" name="type" id="polyline" value="polyline">polyline</label>
+            </fieldset>
+            <fieldset>
+                <legend>geo data array</legend>
+                <textarea name="geoData" id="geodata" placeholder="ex: 47.24192, 4.975863 or multiple: [47.24192, 4.975863], [47.24192, 4.975863], ..."></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>contenu de la popup</legend>
+                <input type="text" name="title" id="title" placeholder="titre">
+                <textarea name="popupContent" class="popupContent tinyMce"></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>arguments de l'objet</legend>
+                <select name="argsIco" id="argsIco">
+                    <option value="">--Please choose icône (si marker)--</option>
+                    <option value="visibility.svg">google mat - visibility.svg</option>
+                    <option value="vaccines.svg">google mat - vaccines.svg</option>
+                    <option value="payments.svg">google mat - payments.svg</option>
+                    <option value="point_of_sale.svg">google mat - point_of_sale.svg</option>
+                    <option value="warning.svg">google mat - warning.svg</option>
+                    <option value="stars.svg">google mat - stars.svg</option>
+                    <option value="school.svg">google mat - school.svg</option>
+                    <option value="swords-armor.svg">google mat - swords-armor.svg</option>
+                    <option value="game.svg">google mat - game.svg</option>
+                    <option value="health_metrics.svg">google mat - health_metrics.svg</option>
+                    <option value="storage.svg">google mat - storage.svg</option>
+                    <option value="memory.svg">google mat - memory.svg</option>
+                    <option value="house.svg">google mat - house.svg</option>
+                    <option value="coffee.svg">google mat - coffee.svg</option>
+                    <option value="grass.svg">google mat - grass.svg</option>
+                    <option value="room_service.svg">google mat - room_service.svg</option>
+                    <option value="restaurant.svg">google mat - restaurant.svg</option>
+                    <option value="flag.svg">google mat - flag.svg</option>
+                    <option value="business_center.svg">google mat - business_center.svg</option>
+                    <option value="fastfood.svg">google mat - fastfood.svg</option>
+                    <option value="image.svg">google mat - image.svg</option>
+                    <option value="security.svg">google mat - security.svg</option>
+                    <option value="person.svg">google mat - person.svg</option>
+                    <option value="team.svg">google mat - team.svg</option>
+                    <option value="rocket_launch.svg">google mat - rocket_launch.svg</option>
+                    <option value="justice.svg">google mat - justice.svg</option>
+                    <option value="recycling.svg">google mat - recycling.svg</option>
+                    <option value="diamond.svg">google mat - diamond.svg</option>
+                    <option value="coronavirus.svg">google mat - coronavirus.svg</option>
+                    <option value="dead.svg">google mat - dead.svg</option>
+                    <option value="vaping_rooms.svg">google mat - vaping_rooms.svg</option>
+                    <option value="mixture_drugs.svg">google mat - mixture_drugs.svg</option>
+                    <option value="syringe.svg">google mat - syringe.svg</option>
+                    <option value="hotel.svg">google mat - hotel.svg</option>
+                    <option value="liquor.svg">google mat - liquor.svg</option>
+                    <option value="smoke.svg">google mat - smoke.svg</option>
+                </select>
+                <input type="text" name="argsColor" id="argsColor" placeholder="color (si polygon, circle ou polyline)">
+                <input type="number" name="argsRadius" id="argsRadius" placeholder="radius (si circle, rayon en mètre)">
+            </fieldset>
+            <fieldset>
+                <legend>catégorie de l'objet</legend>
+                <div class="catForObj"></div>
+            </fieldset>
+            <input type="image" src="./assets/ico/save.svg" class="content__categoryAdd__submit">
+        </form>
+    </div>
+    <footer></footer>
+    <script type="module" src="./assets/scripts/main.js"></script>
+</body>
+</html>

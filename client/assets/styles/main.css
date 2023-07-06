@@ -1,0 +1,247 @@
+:root {
+  --greenMain: #7ebc6f;
+  --greenMainAlpha: #7ebc6f2f;
+}
+
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 17px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url(../ico/openstreetmapLogoGreat.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+}
+body header {
+  backdrop-filter: blur(7px);
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+}
+body header.header--map {
+  background-color: white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+}
+body header img {
+  height: 50px;
+  margin-right: 0.5em;
+}
+body header h1 {
+  color: var(--greenMain);
+}
+body header ul {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+body header ul li {
+  list-style: none;
+}
+body header ul li a {
+  display: block;
+  padding: 0.5em;
+  vertical-align: middle;
+  font-size: 1.2em;
+  text-decoration: none;
+  background-color: var(--greenMainAlpha);
+  color: var(--greenMain);
+  font-weight: 600;
+  transition: all ease-in-out 0.3s;
+}
+body header ul li a:hover {
+  background-color: var(--greenMain);
+  color: black;
+}
+body header ul li:first-child a {
+  border-bottom-left-radius: 1em;
+  border-top-left-radius: 1em;
+}
+body header ul li:last-child a {
+  border-bottom-right-radius: 1em;
+  border-top-right-radius: 1em;
+}
+body .content {
+  flex: 1;
+}
+body .content > * {
+  backdrop-filter: blur(7px);
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
+  padding: 1em;
+  margin: 1em auto;
+  width: calc(100% - 1em);
+  max-width: 1024px;
+}
+body .content a {
+  color: var(--greenMain);
+  font-weight: 600;
+  transition: all ease-in-out 0.3s;
+}
+body .content a:hover {
+  color: black;
+}
+body .content input, body .content button {
+  height: 2em;
+  padding: 0.2em;
+}
+body .content input.content__categoryAdd__submit, body .content button.content__categoryAdd__submit {
+  padding: 0;
+  position: relative;
+  top: 0.5em;
+}
+body .content a > img, body .content button > img {
+  height: 1.8em;
+}
+body .content .content__categoryExist ul li svg {
+  height: 1.5em;
+  position: relative;
+  top: 0.3em;
+  cursor: pointer;
+  background-color: transparent;
+  fill: red;
+  transition: all ease-in-out 0.3s;
+}
+body .content .content__categoryExist ul li svg:hover {
+  background-color: red;
+  fill: white;
+}
+body .content .content__objectAdd fieldset {
+  padding: 1em;
+  margin: 1em 0;
+}
+body .content .content__objectAdd fieldset legend {
+  margin: 0 1em;
+  padding: 0 1em;
+}
+body .content .content__objectAdd label input[type=radio] {
+  height: 1.5em;
+  position: relative;
+  top: 0.3em;
+  margin: 0 0.5em 0 1em;
+}
+body .content .content__objectAdd textarea {
+  width: 100%;
+  height: 10em;
+  padding: 0.5em;
+}
+body .content .content__objectAdd li {
+  list-style-type: none;
+}
+body .content .content__object__list > * {
+  cursor: pointer;
+}
+body .content .content__object__list > * svg {
+  height: 1.5em;
+  position: relative;
+  top: 0.3em;
+  cursor: pointer;
+  background-color: transparent;
+  fill: red;
+  transition: all ease-in-out 0.3s;
+}
+body .content .content__object__list > * svg:hover {
+  background-color: red;
+  fill: white;
+}
+body .content .content__object__list .content__object__list__itemCat {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+body .content .content__object__list .content__object__list__itemObj {
+  margin-left: 2em;
+}
+body .content--map {
+  flex: 1;
+  position: relative;
+  background-color: black;
+}
+body .content--map.darkmod *:not(.content__map__nav, .content__map__nav *) {
+  filter: invert(100%) brightness(100%);
+}
+body .content--map .iconGoogleMat {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  padding: 5px;
+  border: 1px solid black;
+}
+body .content--map .content__map__nav {
+  width: 300px;
+  position: absolute;
+  top: 0;
+  right: -300px;
+  backdrop-filter: blur(7px);
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid black;
+  z-index: 1000;
+  max-height: 100%;
+  transition: all ease-in-out 0.3s;
+}
+body .content--map .content__map__nav .content__map__nav__hover {
+  background-image: url(../ico/menu.svg);
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  backdrop-filter: blur(7px);
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid black;
+  position: absolute;
+  top: 0;
+  left: -40px;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+}
+body .content--map .content__map__nav.display {
+  right: 0px;
+}
+body .content--map .content__map__nav.display .content__map__nav__hover {
+  background-image: url(../ico/close.svg);
+}
+body .content--map .content__map__nav > button, body .content--map .content__map__nav > a {
+  border: 1px outset black;
+  background-color: rgb(228, 228, 228);
+  padding: 0.2em;
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  transition: all ease-in-out 0.3s;
+  text-align: center;
+  cursor: pointer;
+}
+body .content--map .content__map__nav > button:hover, body .content--map .content__map__nav > a:hover {
+  background-color: var(--greenMain);
+}
+body .content--map .content__map__nav > button img, body .content--map .content__map__nav > a img {
+  height: 2em;
+}
+body .content--map .content__map__nav > *:not(.content__map__nav__hover) {
+  margin: 0.5em 0.5em 0 0.5em;
+  width: calc(100% - 1em);
+}
+body .content--map .content__map__nav > *:not(.content__map__nav__hover):last-child {
+  margin-bottom: 0.5em;
+}
+body .content--map .content__map__nav .content__map__nav__catList ul {
+  max-height: 300px;
+  overflow-y: auto;
+}
+body .content--map .content__map__nav .content__map__nav__catList li {
+  list-style-type: none;
+}
+body .content--map .content__map__nav .content__map__nav__catList li input[type=checkbox] {
+  margin-right: 0.5em;
+}/*# sourceMappingURL=main.css.map */
