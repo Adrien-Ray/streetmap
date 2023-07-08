@@ -127,9 +127,58 @@ function displayObjects(allObjects, listArrayFilter) {
             marker.push(L.polyline(element.geoData, {color: element.args.color}).addTo(map).bindPopup(forBindPopup));
         }
     }
-}
-
+};
 
 document.querySelector('.darkmodToggle').addEventListener('click', () => {
     document.querySelector('.content--map').classList.toggle('darkmod');
 });
+
+// search management
+
+document.querySelector('.content__map__nav__search').addEventListener('click', () => {
+    document.querySelector('.content__map__search').classList.toggle('display');
+});
+
+document.querySelector('.content__map__search__content__hover').addEventListener('click', () => {
+    document.querySelector('.content__map__search').classList.toggle('display');
+});
+
+document.querySelector('.content__map__search__content__form__input').addEventListener('keyup', (event) => {
+    refreshSearch(event.target.value);
+});
+
+function refreshSearch(searchString) {
+    // console.log(searchString);
+    document.querySelector('.content__map__search__content__result').innerHTML = '';
+    let markerNoDoublons = [];
+    for (let index = 0; index < (marker.length / 2); index++) {
+        const element = marker[index];
+        markerNoDoublons.push(element);
+    }
+    console.log('markerNoDoublons', markerNoDoublons);
+    let markerFilter = markerNoDoublons.filter(obj => obj._popup._content.includes(searchString) === true);
+    console.log('markerFilter', markerFilter);
+    for (let index = 0; index < markerFilter.length; index++) {
+        const element = markerFilter[index];
+        const parentElement = document.querySelector(".content__map__search__content__result");
+        const childElement = document.createElement("div");
+        childElement.innerHTML = element._popup._content.substring(0, element._popup._content.indexOf("</b>") + "</b>".length);
+        parentElement.appendChild(childElement);
+        childElement.addEventListener('click', () => {
+            console.log(element);
+            document.querySelector('.content__map__search').classList.toggle('display');
+            let lat;
+            let lng;
+            if (typeof element._latlng !== "undefined") {
+                lat = element._latlng.lat;
+                lng = element._latlng.lng;
+                console.log("not array");
+            } else if (typeof element._latlngs !== "undefined") {
+                lat = element._latlngs[0][0].lat;
+                lng = element._latlngs[0][0].lng;
+                console.log("array");
+            }
+            map.setView([lat, lng], 19);
+        });
+    }
+}
