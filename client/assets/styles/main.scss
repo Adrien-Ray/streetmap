@@ -239,7 +239,9 @@ body{
                 padding: .2em;
                 color: black; 
                 text-decoration: none;
-                display: inline-block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 transition: all ease-in-out .3s;
                 text-align: center;
                 cursor: pointer;
@@ -258,6 +260,19 @@ body{
                 }
             }
             .content__map__nav__catList{
+                border: 1px solid red;
+                max-height: 60vh;
+                overflow-y: auto;
+                scrollbar-width: large;
+                &::-webkit-scrollbar, &::-moz-scrollbar{
+                    width: 10px;
+                }
+                &::-webkit-scrollbar-thumb, &::-moz-scrollbar-thumb{
+                    background-color: red;
+                }
+                &::-webkit-scrollbar-track, &::-moz-scrollbar-track{
+                    background-color: green;
+                }
                 ul{
                     max-height: 300px;
                     overflow-y: auto;
@@ -266,6 +281,67 @@ body{
                     list-style-type: none;
                     input[type="checkbox"]{
                         margin-right: .5em;
+                    }
+                }
+            }
+        }
+        .content__map__search{
+            display: none;
+            &.display{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                backdrop-filter: grayscale(60%) blur(2px);
+                z-index: 2000;
+                .content__map__search__content{
+                    background-color: white;
+                    position: relative;
+                    border: 1px solid black;
+                    padding: 40px;
+                    max-height: calc(100% - 40px);
+                    max-width: calc(100% - 80px);
+                    overflow-y: scroll;
+                    cursor: default;
+                    .content__map__search__content__hover{
+                        background-image: url(../ico/close.svg);
+                        background-size: contain;
+                        width: 40px;
+                        height: 40px;
+                        background-color: rgba(255,255,255,0.6);
+                        border-right: 1px solid black;
+                        border-bottom: 1px solid black;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        cursor: pointer;
+                    }
+                    .content__map__search__content__form{
+                        height: 40px;
+                        display: flex;
+                        margin-bottom: 20px;
+                        >*{
+                            display: block;
+                            height: 100%;
+                        }
+                        input[type="text"]{
+                            padding: 5px;
+                        }
+                    }
+                    .content__map__search__content__result{
+                        border: 1px solid red;
+                        >div{
+                            cursor: pointer;
+                            background-color: transparent;
+                            transition: all ease-in-out .2s;
+                            &:hover{
+                                background-color: #d0ffc4;
+                            }
+                        }
                     }
                 }
             }

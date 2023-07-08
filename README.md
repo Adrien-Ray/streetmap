@@ -7,6 +7,11 @@ projet de prise en main de la bibliothèque leafletJs.
  - `git clone`
  - `docker-compose up`
 
+## acces
+
+ - web browser, go to [http://localhost/map.html](http://localhost/map.html)
+ - json-server: go to [http://localhost:8083/](http://localhost:8083/)
+
 ## stop
 
  - `docker-compose down`
