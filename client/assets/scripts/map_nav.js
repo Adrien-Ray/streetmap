@@ -155,9 +155,7 @@ function refreshSearch(searchString) {
         const element = marker[index];
         markerNoDoublons.push(element);
     }
-    console.log('markerNoDoublons', markerNoDoublons);
-    let markerFilter = markerNoDoublons.filter(obj => obj._popup._content.includes(searchString) === true);
-    console.log('markerFilter', markerFilter);
+    let markerFilter = markerNoDoublons.filter(obj => obj._popup._content.toLowerCase().includes(searchString.toLowerCase()) === true);
     for (let index = 0; index < markerFilter.length; index++) {
         const element = markerFilter[index];
         const parentElement = document.querySelector(".content__map__search__content__result");
@@ -165,7 +163,6 @@ function refreshSearch(searchString) {
         childElement.innerHTML = element._popup._content.substring(0, element._popup._content.indexOf("</b>") + "</b>".length);
         parentElement.appendChild(childElement);
         childElement.addEventListener('click', () => {
-            console.log(element);
             document.querySelector('.content__map__search').classList.toggle('display');
             let lat;
             let lng;
